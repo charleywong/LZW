@@ -11,6 +11,8 @@ bool is_number(const std::string& s);
 
 int main(int argc, char** argv) {
 
+	// used for -l 
+	std::vector<std::vector<stf::string> > table;
 	std::map<int,std::string> dictionary;
 	std::vector<std::string> output;
 	// init dictionary
@@ -23,9 +25,15 @@ int main(int argc, char** argv) {
 	std::cin >> k;
 	output.push_back(k);
 	std::string w = k;
-	std::vector<std::string> input;
+
+	// setup initial 
+	std::string temp[] = {"NIL",k, k};
+	std::vector<std::string> v (temp, temp+sizeof(temp)/sizeof(std::string));
+	table.push_back(v);
+	
 	// while(std::getline(std::cin,k,' ')) {
 	while(std::cin >> k) {
+		temp = ["x"];
 		// std::
 		// input.push_back(k);
 		if(is_number(k)) {
@@ -35,16 +43,18 @@ int main(int argc, char** argv) {
 			} 
 			// std::cout << std::stoi(k) << std::endl;
 		}
+
 		// output k
 		output.push_back(k);
 		// add w + k[0] to dictionary
 		dictionary[index++] = w + k[0];
 		w = k;
+
 	}
 	
 	if (argv[1]) {
 		// -l specified
-		
+
 
 	} else {
 		for (int i = 0; i < output.size(); ++i) {
