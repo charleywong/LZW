@@ -21,6 +21,10 @@ int main (int argc, char** argv) {
 	for (int i = 0; i < index; i++) {
 		dictionary[std::string(1,i)] = i;
 	}
+	// for (std::map<std::string,int>::const_iterator it = dictionary.cbegin(); it != dictionary.cend(); ++it) {
+	// 	std::cout << it->first << ' ' << it->second << std::endl;;
+	// }
+	// std::cout << std::endl;
 	// init 2d vector for -l arg
 	std::vector<std::vector<std::string> > table;
 
@@ -30,6 +34,7 @@ int main (int argc, char** argv) {
 	char k;
 
 	// read from stdin until EOF
+	// incorrect because it will ignore spaces and tabs
 	while (std::cin.get(k)) {
 		if (w.empty()) {
 			w = k;
@@ -45,6 +50,7 @@ int main (int argc, char** argv) {
 			wk = w + k;	
 		}
 		if (dictionary.count(wk) > 0) {
+			// std::cout << wk << std::endl;
 			
 			// if does exist, set w to be wk
 			// at the moment, we set w = index
