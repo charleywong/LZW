@@ -1,1 +1,4 @@
 *.o
+lencode
+ldecode
+Makefile
