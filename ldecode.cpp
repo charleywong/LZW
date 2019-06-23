@@ -38,7 +38,6 @@ int main(int argc, char** argv) {
 	
 	for (int i = 1; i < input.size(); i++) {
 		k = input[i];
-		std::cout << k << std::endl;
 		std::vector<std::string> vec;
 		std::string z = findValue(dictionary,w);
 		if (!z.empty() && std::stoi(z) >= 256) {
@@ -53,7 +52,9 @@ int main(int argc, char** argv) {
 			if(dictionary.count(std::stoi(k))) {
 				// if found in dictionary, get the symbol stored
 				k = dictionary[std::stoi(k)];
-			} 
+			} else if (k == index) {
+				k = w + w[0];
+			}
 			// std::cout << std::stoi(k) << std::endl;
 		} else {
 			vec.push_back(k);
