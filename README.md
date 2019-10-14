@@ -1,1 +1,1 @@
-# COMP9319 ASSIGNMENT 1
+# An implementation of LZW using C++
